@@ -1,0 +1,10 @@
+
+.idea/
+
+*.zip
+
+*.csv
+
+*.pkl
+
+source/__pycache__/
