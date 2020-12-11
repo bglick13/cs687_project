@@ -108,6 +108,14 @@ class Agent:
             for x in p.reshape(-1, 1).squeeze():
                 f.write(f'{str(x)}\n')
 
+    def load_policy(self, p):
+        a = []
+        with open(f'../policy_{p}.txt', 'r') as f:
+            lines = f.readlines()
+        for l in lines:
+            a.append(float(l))
+        self.policy = np.array(a).reshape(self.n_states, self.n_actions)
+
     def safety_test(self, data: Dataset, is_candidate_data=False, pi_e=None, verbose=False, policies=None):
         pdis, sigma = self.pdis_d(data, pi_e=pi_e, policies=policies)
         subtract_term = sigma / np.sqrt(len(self.safety_data))
