@@ -7,5 +7,6 @@ REQUIREMENTS:
     - tqdm (pip install tqdm)
 
 HOW TO RUN:
+- Place the data.csv file in the root directory
 - The python file run.py is the main project script. It should be run from the source directory
 - NOTE: The first time it runs, it will generate a dataset file, parsed from the provided data.csv file. This can be quite slow the first time it runs
